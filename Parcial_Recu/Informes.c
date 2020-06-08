@@ -601,6 +601,51 @@ int info_printClienteConLocalidad(Cliente cli_array[], int cli_limite, Localidad
     return retorno;
 }
 
+void info_PrintClientesConSusMascotasYlocalidad(Cliente cli_Array[], int cli_limite, Mascota pet_Array[], int pet_limite,Localidad local_array[], int local_limite)
+{
+    int i;
+    int j;
+    int k;
+    char flagTieneMascota;
+
+    for(i=0; i<cli_limite; i++)
+    {
+        if(cli_Array[j].isEmpty == OCUPADO)
+        {
+            printf("\n\t-----------------------------------------------------------------------------------------------------");
+            printf("\n\t\t\t\tCliente: %s %s",cli_Array[i].apellido, cli_Array[i].nombre);
+            printf("\n\t-----------------------------------------------------------------------------------------------------");
+            printf("\n\t ID_CLIENTE - ID_MASCOTA - NOMBRE_MASCOTA - TIPO_MASCOTA - SEXO_MASCOTA - LOCALIDAD - ESTADO_CLIENTE");
+            printf("\n\t-----------------------------------------------------------------------------------------------------");
+            flagTieneMascota = 'n';
+            for(k=0;k<local_limite;k++)
+            {
+                if(local_array[k].isEmpty == OCUPADO)
+                {
+                    for(j=0; j<pet_limite; j++)
+                    {
+                        if(pet_Array[j].idCliente == cli_Array[i].idCliente && pet_Array[j].isEmpty == OCUPADO && local_array[k].idLocalidad == cli_Array[j].idLocalidad)
+                        {
+                            printf("\n%14d %13d %16s %14s %14c $13s %14d",cli_Array[i].idCliente,
+                                                                            pet_Array[j].idMascota,
+                                                                            pet_Array[j].nombre,
+                                                                          TXT_TIPOS[pet_Array[j].tipo],
+                                                                          pet_Array[j].sexo,
+                                                                          local_array[k].provincia
+                                                                          ,cli_Array[i].isEmpty);
+                            flagTieneMascota = 's';
+                        }
+                    }
+                }
+            }
+        }
+        if(flagTieneMascota == 'n')
+        {
+            printf("\t\t\t%s, No tiene mascotas\n", cli_Array[i].nombre);
+        }
+    }
+            printf("\n\t-----------------------------------------------------------------------------------------------------");
+}
 
 
 

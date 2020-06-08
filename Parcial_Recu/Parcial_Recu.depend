@@ -9,10 +9,10 @@
 
 1591652689 c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\utn.h
 
-1591655631 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\informes.c
+1591656738 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\informes.c
 	"Informes.h"
 
-1591655648 c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\informes.h
+1591656738 c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\informes.h
 	"Cliente.h"
 	"Mascota.h"
 	"Localidad.h"
@@ -33,7 +33,7 @@
 	<stdio.h>
 	<string.h>
 
-1591655707 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\main.c
+1591656797 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Informes.h"

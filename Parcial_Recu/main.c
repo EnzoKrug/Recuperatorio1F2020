@@ -167,6 +167,7 @@ int main()
         case 3:
             printf("\n --------MOSTRAR CLIENTES CON SUS MASCOTAS--------\n");
             info_PrintClientesConSusMascotas(arrayClientes,QTY_CLIENTES,arrayMascotas,QTY_MASCOTAS);
+            //info_PrintClientesConSusMascotasYlocalidad(arrayClientes,QTY_CLIENTES,arrayMascotas,QTY_MASCOTAS,arrayLocalidadClientes,QTY_LOCALCLIENTES);
             break;
         case 4:
             printf("\n --------CARGAR MASCOTA--------\n");
