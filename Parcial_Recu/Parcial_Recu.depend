@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1591652837 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\cliente.c
+	"Cliente.h"
+	"utn.h"
+	<stdio.h>
+	<string.h>
+
+1591652650 c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\cliente.h
+
+1591652689 c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\utn.h
+
+1591652860 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\informes.c
+	"Informes.h"
+
+1591652718 c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\informes.h
+	"Cliente.h"
+	"Mascota.h"
+	"Raza.h"
+	"utn.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1591652661 c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\mascota.h
+	"Raza.h"
+
+1591652744 c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\raza.h
+
+1591652826 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\localidad.c
+
+1591652704 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Informes.h"
+	"utn.h"
+
+1591652845 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\mascota.c
+	"Mascota.h"
+	<stdio.h>
+	<string.h>
+	"utn.h"
+
+1591652852 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\raza.c
+	"Raza.h"
+	"utn.h"
+	<stdio.h>
+	<string.h>
+
+1591652677 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
