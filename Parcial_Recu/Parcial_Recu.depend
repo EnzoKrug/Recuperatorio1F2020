@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1591655566 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\cliente.c
+1591657837 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\cliente.c
 	"Cliente.h"
 	"utn.h"
 	<stdio.h>
@@ -9,7 +9,7 @@
 
 1591652689 c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\utn.h
 
-1591656738 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\informes.c
+1591657321 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\informes.c
 	"Informes.h"
 
 1591656738 c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\informes.h
@@ -27,13 +27,13 @@
 
 1591652744 c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\raza.h
 
-1591654337 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\localidad.c
+1591657673 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\localidad.c
 	"Localidad.h"
 	"utn.h"
 	<stdio.h>
 	<string.h>
 
-1591656797 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\main.c
+1591657936 source:c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Informes.h"
@@ -56,5 +56,5 @@
 	<stdlib.h>
 	<string.h>
 
-1591654300 c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\localidad.h
+1591657687 c:\users\alan krug\desktop\recuperatorio1f2020\parcial_recu\localidad.h
 

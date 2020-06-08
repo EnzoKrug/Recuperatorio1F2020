@@ -610,7 +610,7 @@ void info_PrintClientesConSusMascotasYlocalidad(Cliente cli_Array[], int cli_lim
 
     for(i=0; i<cli_limite; i++)
     {
-        if(cli_Array[j].isEmpty == OCUPADO)
+        if(cli_Array[i].isEmpty == OCUPADO)
         {
             printf("\n\t-----------------------------------------------------------------------------------------------------");
             printf("\n\t\t\t\tCliente: %s %s",cli_Array[i].apellido, cli_Array[i].nombre);
@@ -626,13 +626,10 @@ void info_PrintClientesConSusMascotasYlocalidad(Cliente cli_Array[], int cli_lim
                     {
                         if(pet_Array[j].idCliente == cli_Array[i].idCliente && pet_Array[j].isEmpty == OCUPADO && local_array[k].idLocalidad == cli_Array[j].idLocalidad)
                         {
-                            printf("\n%14d %13d %16s %14s %14c $13s %14d",cli_Array[i].idCliente,
-                                                                            pet_Array[j].idMascota,
-                                                                            pet_Array[j].nombre,
-                                                                          TXT_TIPOS[pet_Array[j].tipo],
-                                                                          pet_Array[j].sexo,
-                                                                          local_array[k].provincia
-                                                                          ,cli_Array[i].isEmpty);
+                            printf("\n%14d %13d %16s %14s %14c %13s %14d",  cli_Array[i].idCliente,pet_Array[j].idMascota,
+                                                                            pet_Array[j].nombre,TXT_TIPOS[pet_Array[j].tipo],
+                                                                            pet_Array[j].sexo,local_array[k].provincia,
+                                                                            cli_Array[i].isEmpty);
                             flagTieneMascota = 's';
                         }
                     }
@@ -647,6 +644,69 @@ void info_PrintClientesConSusMascotasYlocalidad(Cliente cli_Array[], int cli_lim
             printf("\n\t-----------------------------------------------------------------------------------------------------");
 }
 
+
+
+//19- listar los dueños con su localidad que tienen dos o más
+//mascotas del mismo tipo .
+
+int info_printDueniosConMascotasDelMismoTipo(Cliente cli_array[], int cli_limite, Mascota pet_array[], int pet_limite, Localidad local_array[], int local_limite)
+{
+    int retorno = -1;
+    int i;
+    int j;
+    int k;
+    int auxTipo[] = {0,1,2};
+    int contadorTipo[cli_limite];
+    int hayMascotasDelMismoTipo; // Flag
+
+    if(cli_array != NULL && cli_limite > 0 && pet_array != NULL && pet_limite > 0 && local_array != NULL && local_limite > 0)
+    {
+        hayMascotasDelMismoTipo = 0;
+        for(i=0;i<cli_limite;i++)
+        {
+            contadorTipo[i] = 0;
+            if(cli_array[i].isEmpty == OCUPADO)
+            {
+                for(k=0;k<local_limite;k++)
+                {
+                    if(local_array[k].isEmpty == OCUPADO)
+                    {
+                        for(i=0;i<3;i++)
+                        {
+                            for(j=0;j<pet_limite;j++)
+                            {
+                                if(pet_array[j].isEmpty == OCUPADO && cli_array[i].idCliente == pet_array[j].idCliente && local_array[k].idLocalidad == cli_array[i].idLocalidad)
+                                {
+                                    if(pet_array[j].tipo == auxTipo[i])
+                                    {
+                                        contadorTipo[i]++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if(hayMascotasDelMismoTipo)
+            {
+                if(contadorTipo[i] > 1)
+                {
+                    info_printClienteConLocalidad(cli_array,QTY_CLIENTES,local_array,QTY_LOCALCLIENTES);
+                    //info_printCliente(cli_array,cli_limite,pet_array,pet_limite,raza_array,raza_limite,i);
+                    //printf("\n\t\t\t\t\t\tTiene %d Machos.",contadorMacho[i]);
+                }
+            }
+        }
+
+        if(!hayMascotasDelMismoTipo)
+        {
+            printf("\nNo hay duenios que tengan mascotas del mismo sexo.");
+        }
+
+        retorno = 0;
+    }
+    return retorno;
+}
 
 
 

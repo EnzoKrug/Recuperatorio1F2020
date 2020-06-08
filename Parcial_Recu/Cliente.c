@@ -172,7 +172,7 @@ int cli_altaArray(Cliente array[], int limite, int indice, int* id)
 	{
 		if(	utn_getNombre(bufferCliente.nombre,QTY_NOMBRE,"\nNombre?\n","\nERROR.",2) == 0 &&
             utn_getNombre(bufferCliente.apellido,QTY_APELLIDO,"\nApellido?\n","\nERROR.",2) == 0 &&
-			utn_getDescripcion(bufferCliente.localidad,QTY_LOCALIDAD,"\nLocalidad?\n","\nERROR.",2) == 0 &&
+			/*utn_getDescripcion(bufferCliente.localidad,QTY_LOCALIDAD,"\nLocalidad?\n","\nERROR.",2) == 0 &&*/
 			utn_getDescripcion(bufferCliente.telefono,QTY_TELEFONO,"\nTelefono?","\nERROR.",2) == 0 &&
             utn_getNumero(&bufferCliente.edad,"\nEdad?","\nERROR.",1,100,2) == 0 &&
             utn_getChar(&bufferCliente.sexo,"\nSexo?","\nERROR.",'f','m',2) == 0)

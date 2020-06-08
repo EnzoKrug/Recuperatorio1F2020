@@ -76,6 +76,8 @@ int main()
     int auxIdCliente;
     int auxIdMascota;
     int auxIdRaza;
+    int auxIdLocalidad;
+    int indiceLocalidad;
     int indiceCliente;
     int indiceMascota;
     int indiceRaza;
@@ -166,8 +168,8 @@ int main()
             break;
         case 3:
             printf("\n --------MOSTRAR CLIENTES CON SUS MASCOTAS--------\n");
-            info_PrintClientesConSusMascotas(arrayClientes,QTY_CLIENTES,arrayMascotas,QTY_MASCOTAS);
-            //info_PrintClientesConSusMascotasYlocalidad(arrayClientes,QTY_CLIENTES,arrayMascotas,QTY_MASCOTAS,arrayLocalidadClientes,QTY_LOCALCLIENTES);
+            //info_PrintClientesConSusMascotas(arrayClientes,QTY_CLIENTES,arrayMascotas,QTY_MASCOTAS);
+            info_PrintClientesConSusMascotasYlocalidad(arrayClientes,QTY_CLIENTES,arrayMascotas,QTY_MASCOTAS,arrayLocalidadClientes,QTY_LOCALCLIENTES);
             break;
         case 4:
             printf("\n --------CARGAR MASCOTA--------\n");
@@ -260,14 +262,30 @@ int main()
         case 7:
             printf("\n --------CARGAR CLIENTE--------\n");
             indiceCliente = cli_getEmptyIndex(arrayClientes,QTY_CLIENTES);
-            if(!cli_altaArray(arrayClientes,QTY_CLIENTES,indiceCliente,&idCliente))
+            if(indiceCliente >= 0)
             {
-                printf("\nSe cargo con exito.");
+                local_imprimirArray(arrayLocalidadClientes,QTY_LOCALCLIENTES);
+                if(!utn_getNumero(&auxIdLocalidad,"\nIngrese el ID de la localidad del cliente: ","\nERROR.",0,QTY_LOCALCLIENTES,2))
+                {
+                    indiceLocalidad = local_BuscarId(arrayLocalidadClientes,QTY_LOCALCLIENTES,auxIdLocalidad);
+                    if(indiceLocalidad >= 0)
+                    {
+                        if(!cli_altaArray(arrayClientes,QTY_CLIENTES,indiceCliente,&idCliente))
+                        {
+                            printf("\nSe cargo con exito.");
+                        }
+                        else
+                        {
+                            printf("\nOcurrio un error.");
+                        }
+                    }
+                    else
+                    {
+                        printf("\nID no registrado.");
+                    }
+                }
             }
-            else
-            {
-                printf("\nOcurrio un error.");
-            }
+
             break;
         case 8:
             printf("\n--------Eliminar cliente con sus mascotas (CASCADA)--------");
@@ -440,8 +458,17 @@ int main()
                 }*/
             break;
             case 19:
-                printf("\n------LISTAR DUENIOS CON MASCOTAS DEL MISMO SEXO------");
+               /* printf("\n------LISTAR DUENIOS CON MASCOTAS DEL MISMO SEXO------");
                 if(!info_printDueniosConMascotasDelMismoSexo(arrayClientes,QTY_CLIENTES,arrayMascotas,QTY_MASCOTAS,arrayRazaMascotas,QTY_RAZAS))
+                {
+                    printf("\nLista mostrada con exito.");
+                }
+                else
+                {
+                    printf("\nOcurrio un error.");
+                }*/
+                printf("\n------LISTAR DUENIOS CON MASCOTAS DEL MISMO TIPO POR LOCALIDAD------");
+                if(!info_printDueniosConMascotasDelMismoTipo(arrayClientes,QTY_CLIENTES,arrayMascotas,QTY_MASCOTAS,arrayLocalidadClientes,QTY_LOCALCLIENTES))
                 {
                     printf("\nLista mostrada con exito.");
                 }

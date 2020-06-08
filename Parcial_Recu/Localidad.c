@@ -105,8 +105,8 @@ int Raza_CargarArray(Raza array[],int limite, int indice,int* idRaza)
 	}
 	return retorno;
 }
-
-int raza_BuscarId(Raza array[],int limite, int idRaza)
+*/
+int local_BuscarId(Localidad array[],int limite, int idLocalidad)
 {
     int retorno = -1;
     int i;
@@ -114,7 +114,7 @@ int raza_BuscarId(Raza array[],int limite, int idRaza)
     {
         for(i=0;i<limite;i++)
         {
-            if(array[i].idRaza == idRaza)
+            if(array[i].idLocalidad == idLocalidad)
             {
                 retorno = i;
                 break;
@@ -122,4 +122,4 @@ int raza_BuscarId(Raza array[],int limite, int idRaza)
         }
     }
     return retorno;
-}*/
+}

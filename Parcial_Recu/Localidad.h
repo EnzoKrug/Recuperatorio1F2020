@@ -23,8 +23,8 @@ int local_altaForzada(Localidad array[], int limite, int indice, int* idLocalida
 int local_imprimirArray(Localidad array[], int limite);
 /*
 int local_CargarArray(Localidad array[],int limite, int indice,int* idLocalidad);
-
-int local_BuscarId(Localidad array[],int limite, int idRaza);
 */
+int local_BuscarId(Localidad array[],int limite, int idLocalidad);
+
 
 #endif // LOCALIDAD_H_INCLUDED

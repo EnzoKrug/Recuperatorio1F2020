@@ -44,4 +44,6 @@ int info_printClienteConLocalidad(Cliente cli_array[], int cli_limite, Localidad
 
 void info_PrintClientesConSusMascotasYlocalidad(Cliente cli_Array[], int cli_limite, Mascota pet_Array[], int pet_limite,Localidad local_array[], int local_limite);
 
+int info_printDueniosConMascotasDelMismoTipo(Cliente cli_array[], int cli_limite, Mascota pet_array[], int pet_limite, Localidad local_array[], int local_limite);
+
 #endif // INFORMES_H_INCLUDED
