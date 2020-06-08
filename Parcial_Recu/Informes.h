@@ -7,6 +7,7 @@
 
 #include "Cliente.h"
 #include "Mascota.h"
+#include "Localidad.h"
 #include "Raza.h"
 #include "utn.h"
 #include <stdio.h>
