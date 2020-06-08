@@ -569,6 +569,39 @@ int info_printCliente(Cliente cli_array[], int cli_limite, Mascota pet_array[], 
     return retorno;
 }
 
+int info_printClienteConLocalidad(Cliente cli_array[], int cli_limite, Localidad local_array[], int local_limite)
+{
+    int j;
+    int k;
+    int retorno = -1;
+    if(cli_array != NULL && cli_limite > 0 && local_array != NULL && local_limite > 0)
+    {
+		printf("\n\t-------------------------------------------------------------------------------------------");
+        printf("\n\t ID_CLIENTE  -  NOMBRE  -  APELLIDO  -  LOCALIDAD  -  TELEFONO  -  EDAD  -  SEXO  -  ESTADO");
+        printf("\n\t-------------------------------------------------------------------------------------------");
+        for(j=0;j<cli_limite;j++)
+        {
+            if(cli_array[j].isEmpty == OCUPADO)
+            {
+                for(k=0;k<local_limite;k++)
+                {
+                    if(local_array[k].isEmpty == OCUPADO && local_array[k].idLocalidad == cli_array[j].idLocalidad)
+                    {
+                        printf("\n%14d %15s %11s %14s %14s %5d %8c %9d",cli_array[j].idCliente,cli_array[j].nombre,
+                                                                        cli_array[j].apellido,local_array[k].provincia,
+                                                                        cli_array[j].telefono,cli_array[j].edad,
+                                                                        cli_array[j].sexo,cli_array[j].isEmpty);
+                    }
+                }
+            }
+        }
+        printf("\n\t-------------------------------------------------------------------------------------------");
+        retorno = 0;
+    }
+    return retorno;
+}
+
+
 
 
 

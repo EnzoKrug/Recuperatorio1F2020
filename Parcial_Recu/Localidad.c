@@ -4,9 +4,9 @@
 #include <stdio.h>
 #include <string.h>
 
-static int raza_imprimir(Raza elemento);
+static int local_imprimir(Localidad elemento);
 
-int local_inicializarArray(Localidad array[], int limite);
+int local_inicializarArray(Localidad array[], int limite)
 {
     int retorno = -1;
 	int i;
@@ -20,7 +20,7 @@ int local_inicializarArray(Localidad array[], int limite);
 	}
 	return retorno;
 }
-int local_altaForzada(Localidad array[], int limite, int indice, int* idLocalidad, char provincia[], int codigoPostal ,char descripcion[]);
+int local_altaForzada(Localidad array[], int limite, int indice, int* idLocalidad, char provincia[], int codigoPostal ,char descripcion[])
 {
     int retorno = -1;
     Localidad buffer;
@@ -37,35 +37,19 @@ int local_altaForzada(Localidad array[], int limite, int indice, int* idLocalida
     }
     return retorno;
 }
-/*
-int raza_HardcodeoArray(Raza array[])
-{
- 	int i;
-    Raza buffer [] =  { {0,"razaGato","pais0",OCUPADO},
-                        {1,"razaPerro","pais1",OCUPADO},
-                        {2,"Pitbull","pais2",OCUPADO},
-                        {3,"razaIguana1","pais3",OCUPADO},
-                        {4,"Labrador","pais4",OCUPADO},
-                        {5,"Bulldog","pais5",OCUPADO}};
 
-    for(i=0; i<6; i++)
-    {
-        array[i] = buffer[i];
-    }
-    return i;
-}*/
-
-static int raza_imprimir(Raza elemento)
+static int local_imprimir(Localidad elemento)
 {
 
 	int retorno = -1;
 	if(elemento.isEmpty == OCUPADO)
 	{
 		retorno = 0;
-		printf("\n\%13d %17s %14s %7d", elemento.idRaza,
-                                        elemento.nombre,
-                                        elemento.pais,
-                                        elemento.isEmpty);
+		printf("\n\%13d %17s %7d %14s %7d ",elemento.idLocalidad,
+                                            elemento.provincia,
+                                            elemento.codigoPostal,
+                                            elemento.descripcion,
+                                            elemento.isEmpty);
 
 
 	}
@@ -79,29 +63,29 @@ static int raza_imprimir(Raza elemento)
  * \return Retorna 0 (EXITO) y -1 (ERROR)
  *
  */
-int raza_imprimirArray(Raza array[],int limite)
+int local_imprimirArray(Localidad array[],int limite)
 {
 	int retorno = -1;
 	int i;
 	if(limite > 0)
 	{
 		retorno = 0;
-        printf("\n\t--------------------------------------------------");
-		printf("\n\t ID_RAZA  -  NOMBRE_RAZA  -  PAIS_RAZA  -  ESTADO ");
-        printf("\n\t--------------------------------------------------");
+        printf("\n\t-------------------------------------------------------------------------");
+		printf("\n\t ID_LOCALIDAD  -  PROVINCIA  -  CODIGO_POSTAL  -  DESCRIPCION  -  ESTADO ");
+        printf("\n\t-------------------------------------------------------------------------");
 		for(i=0;i<limite;i++)
 		{
 		    if(array[i].isEmpty == OCUPADO)
             {
-                raza_imprimir(array[i]);
+                local_imprimir(array[i]);
                //printf("\n\t--------------------------------------------------");
             }
 		}
-        printf("\n\t--------------------------------------------------");
+        printf("\n\t-------------------------------------------------------------------------");
 	}
 	return retorno;
 }
-
+/*
 int Raza_CargarArray(Raza array[],int limite, int indice,int* idRaza)
 {
 	int retorno = -1;
@@ -138,4 +122,4 @@ int raza_BuscarId(Raza array[],int limite, int idRaza)
         }
     }
     return retorno;
-}
+}*/

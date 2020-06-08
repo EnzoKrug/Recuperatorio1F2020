@@ -4,6 +4,7 @@
 #define QTY_CLIENTES 10
 #define QTY_MASCOTAS 20
 #define QTY_RAZAS 50
+#define QTY_LOCALCLIENTES 10
 
 #include "Cliente.h"
 #include "Mascota.h"
@@ -35,5 +36,7 @@ int info_sortDueniosPorCantidadMascotasYnombre(Cliente cli_array[], int cli_limi
 int info_printDueniosConMascotasDelMismoSexo(Cliente cli_array[], int cli_limite, Mascota pet_array[], int pet_limite, Raza raza_array[], int raza_limite);
 
 int info_printCliente(Cliente cli_array[], int cli_limite, Mascota pet_array[], int pet_limite, Raza raza_array[], int raza_limite, int indice);
+
+int info_printClienteConLocalidad(Cliente cli_array[], int cli_limite, Localidad local_array[], int local_limite);
 
 #endif // INFORMES_H_INCLUDED

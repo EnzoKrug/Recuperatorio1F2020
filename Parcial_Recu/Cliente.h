@@ -11,6 +11,7 @@
 typedef struct
 {
     int  idCliente;
+    int  idLocalidad;
     char nombre[QTY_NOMBRE];
 	char apellido[QTY_APELLIDO];
 	char localidad[QTY_LOCALIDAD];
@@ -24,7 +25,7 @@ int cli_inicializarArray(Cliente array[],int limite);
 
 //int cli_HardcodeoArray(Cliente array[]);
 
-int cli_altaForzadaArray(Cliente array[],int limite, int indice, int* idCliente, char nombre[],char apellido[],char localidad[],char telefono[], int edad, char sexo);
+int cli_altaForzadaArray(Cliente array[],int limite, int indice, int* idCliente,int idLocalidad, char nombre[],char apellido[],char telefono[], int edad, char sexo);
 
 int cli_printCliente(Cliente elemento[], int indice);
 

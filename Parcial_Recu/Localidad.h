@@ -19,9 +19,9 @@ typedef struct
 int local_inicializarArray(Localidad array[], int limite);
 
 int local_altaForzada(Localidad array[], int limite, int indice, int* idLocalidad, char provincia[], int codigoPostal ,char descripcion[]);
-/*
-int local_imprimirArray(Localidad array[], int limite);
 
+int local_imprimirArray(Localidad array[], int limite);
+/*
 int local_CargarArray(Localidad array[],int limite, int indice,int* idLocalidad);
 
 int local_BuscarId(Localidad array[],int limite, int idRaza);

@@ -67,10 +67,12 @@ int main()
     Cliente arrayClientes[QTY_CLIENTES];
     Mascota arrayMascotas[QTY_MASCOTAS];
     Raza arrayRazaMascotas[QTY_RAZAS];
+    Localidad arrayLocalidadClientes[QTY_LOCALCLIENTES];
     int opcion;
     int idCliente = 0;
     int idMascota = 0;
     int idRaza = 0;
+    int idLocalidad = 0;
     int auxIdCliente;
     int auxIdMascota;
     int auxIdRaza;
@@ -84,16 +86,20 @@ int main()
     float promEdadesMascotas;
 
     if(!cli_inicializarArray(arrayClientes,QTY_CLIENTES) && !pets_inicializarArray(arrayMascotas,QTY_MASCOTAS) &&
-       !raza_inicializarArray(arrayRazaMascotas,QTY_RAZAS))
+       !raza_inicializarArray(arrayRazaMascotas,QTY_RAZAS && !local_inicializarArray(arrayLocalidadClientes,QTY_LOCALCLIENTES)))
     {
             printf("\nINIT CLIENTES MASCOTAS Y RAZA OK!!\n");
     }
 
-    cli_altaForzadaArray(arrayClientes,QTY_CLIENTES,0,&idCliente,"Vanesa","Perez","Avellaneda","15-5956-2513",35,'f');
-    cli_altaForzadaArray(arrayClientes,QTY_CLIENTES,1,&idCliente,"Juan","Pavon","Barracas","15-9632-2354",40,'m');
-    cli_altaForzadaArray(arrayClientes,QTY_CLIENTES,2,&idCliente,"Mariela","Lopez","Lanus","15-3625-4587",20,'f');
-    cli_altaForzadaArray(arrayClientes,QTY_CLIENTES,3,&idCliente,"Hernan","Zapatta","Balvanera","15-3625-4458",18,'m');
-    cli_altaForzadaArray(arrayClientes,QTY_CLIENTES,4,&idCliente,"Alan","Dominguez","San telmo","15-4875-9625",32,'m');
+    cli_altaForzadaArray(arrayClientes,QTY_CLIENTES,0,&idCliente,0,"Vanesa","Perez","15-5956-2513",35,'f');
+    cli_altaForzadaArray(arrayClientes,QTY_CLIENTES,1,&idCliente,1,"Juan","Pavon","15-9632-2354",40,'m');
+    cli_altaForzadaArray(arrayClientes,QTY_CLIENTES,2,&idCliente,2,"Mariela","Lopez","15-3625-4587",20,'f');
+    cli_altaForzadaArray(arrayClientes,QTY_CLIENTES,3,&idCliente,0,"Hernan","Zapatta","15-3625-4458",18,'m');
+    cli_altaForzadaArray(arrayClientes,QTY_CLIENTES,4,&idCliente,2,"Alan","Dominguez","15-4875-9625",32,'m');
+
+    local_altaForzada(arrayLocalidadClientes,QTY_LOCALCLIENTES,0,&idLocalidad,"Quilmes",1111,"Buen lugar");
+    local_altaForzada(arrayLocalidadClientes,QTY_LOCALCLIENTES,1,&idLocalidad,"Rosario",2222,"Buen lugar");
+    local_altaForzada(arrayLocalidadClientes,QTY_LOCALCLIENTES,2,&idLocalidad,"Santa Rosa",2222,"Buen lugar");
 
     pets_altaForzadaArray(arrayMascotas,QTY_MASCOTAS,0,&idMascota,0,0,"Amapola",1,5,20.5,'h');
     pets_altaForzadaArray(arrayMascotas,QTY_MASCOTAS,1,&idMascota,0,0,"Bella",1,4,20.5,'h');
@@ -117,7 +123,9 @@ int main()
 
     raza_imprimirArray(arrayRazaMascotas,QTY_RAZAS);
 
-    //printf("\n\n\n");
+    printf("\n\n\n");
+
+    local_imprimirArray(arrayLocalidadClientes,QTY_LOCALCLIENTES);
 
     do
     {
@@ -150,7 +158,7 @@ int main()
         {
         case 1:
             printf("\n -----MOSTRAR CLIENTES-----");
-            cli_imprimirArray(arrayClientes,QTY_CLIENTES);
+            info_printClienteConLocalidad(arrayClientes,QTY_CLIENTES,arrayLocalidadClientes,QTY_LOCALCLIENTES);
             break;
         case 2:
             printf("\n -----MOSTRAR MASCOTAS-----");

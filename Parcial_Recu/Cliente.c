@@ -26,7 +26,7 @@ int cli_inicializarArray(Cliente array[],int limite)
 	return retorno;
 }
 
-int cli_altaForzadaArray(Cliente array[],int limite, int indice, int* idCliente, char nombre[],char apellido[],char localidad[],char telefono[], int edad, char sexo)
+int cli_altaForzadaArray(Cliente array[],int limite, int indice, int* idCliente,int idLocalidad, char nombre[],char apellido[],char telefono[], int edad, char sexo)
 {
     int retorno = -1;
 	Cliente buffer;
@@ -35,10 +35,11 @@ int cli_altaForzadaArray(Cliente array[],int limite, int indice, int* idCliente,
 	{
 		strncpy(buffer.nombre,nombre,QTY_NOMBRE);
 		strncpy(buffer.apellido,apellido,QTY_APELLIDO);
-        strncpy(buffer.localidad,localidad,QTY_LOCALIDAD);
+        //strncpy(buffer.localidad,localidad,QTY_LOCALIDAD);
 		strncpy(buffer.telefono,telefono,QTY_TELEFONO);
 		buffer.edad = edad;
 		buffer.sexo = sexo;
+		buffer.idLocalidad = idLocalidad;
 		retorno = 0;
 		buffer.idCliente = *idCliente;
 		buffer.isEmpty = OCUPADO;
